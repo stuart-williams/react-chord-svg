@@ -3,7 +3,7 @@ import BarredNote from "./BarredNote";
 import MutedNote from "./MutedNote";
 import OpenNote from "./OpenNote";
 import SimpleNote from "./SimpleNote";
-import type { BarNote, Note } from "./types";
+import type { Note } from "./types";
 
 export interface NoteFactoryProps {
   note: Note;
@@ -33,7 +33,8 @@ const NoteFactory: FC<NoteFactoryProps> = ({
       <BarredNote
         x={x}
         y={y}
-        note={note as BarNote}
+        note={note}
+        bar={note.bar}
         stringSpacing={stringSpacing}
       />
     );

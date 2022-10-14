@@ -1,15 +1,17 @@
 import type { FC } from "react";
 import { fontFamily, noteRadius } from "./const";
-import type { BarNote } from "./types";
+import type { Note } from "./types";
 
 export interface BarredNoteProps {
   x: string;
   y: string;
-  note: BarNote;
+  note: Note;
+  bar: number;
   stringSpacing: number;
 }
 
 const BarredNote: FC<BarredNoteProps> = ({
+  bar,
   note,
   x: xProp,
   y: yProp,
@@ -17,7 +19,7 @@ const BarredNote: FC<BarredNoteProps> = ({
 }) => {
   const x = `calc(${xProp} - ${noteRadius}px)`;
   const y = `calc(${yProp} - ${noteRadius}px)`;
-  const width = `calc(${stringSpacing * (note.bar - 1)}% + ${noteRadius * 2}px`;
+  const width = `calc(${stringSpacing * (bar - 1)}% + ${noteRadius * 2}px`;
 
   if (note.text) {
     return (

@@ -1,5 +1,3 @@
-import type { SetRequired } from "type-fest";
-
 export interface Note {
   bar?: number;
   fret?: number;
@@ -10,5 +8,3 @@ export interface Note {
   opacity?: number;
   textColor?: string;
 }
-
-export type BarNote = SetRequired<Note, "bar">;

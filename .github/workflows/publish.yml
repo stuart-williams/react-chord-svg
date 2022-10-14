@@ -16,7 +16,7 @@ jobs:
 
       - uses: bahmutov/npm-install@v1
 
-      - run: npm run build:lib
+      - run: npm run build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

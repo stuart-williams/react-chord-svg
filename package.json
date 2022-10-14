@@ -28,7 +28,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "test": "react-scripts test --watchAll=false",
-    "test:ci": "start-server-and-test 'http-server storybook-static -c-1 --silent' 8080 test"
+    "test:ci": "start-server-and-test 'http-server storybook-static -c-1 --silent -p 6006' 6006 test"
   },
   "eslintConfig": {
     "extends": [

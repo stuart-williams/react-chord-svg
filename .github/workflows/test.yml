@@ -1,8 +1,6 @@
-name: NPM Publish
+name: Run Tests
 
-on:
-  release:
-    types: [created]
+on: push
 
 jobs:
   build:
@@ -12,13 +10,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "16.x"
-          registry-url: "https://registry.npmjs.org"
 
       - uses: bahmutov/npm-install@v1
 
       - run: npm run build-storybook
       - run: npm run test:ci
-      - run: npm run build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

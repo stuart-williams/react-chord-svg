@@ -27,7 +27,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "test": "react-scripts test --watchAll=false",
-    "test:ci": "start-server-and-test storybook http://localhost:6006 test"
+    "test:ci": "start-server-and-test 'http-server storybook-static -c-1 --silent' 8080 test"
   },
   "eslintConfig": {
     "extends": [
@@ -71,6 +71,7 @@
     "@storybook/react": "^6.5.12",
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "http-server": "^14.1.1",
     "prop-types": "^15.8.1",
     "puppeteer": "^3.0.0",
     "start-server-and-test": "^1.14.0",

@@ -13,8 +13,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "16.x"
-
-#       - uses: bahmutov/npm-install@v1
-      - run: yarn
+      - uses: bahmutov/npm-install@v1
       - run: npm run build:storybook
       - run: npm run test:ci

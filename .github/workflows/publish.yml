@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,9 +16,7 @@ jobs:
 
       - uses: bahmutov/npm-install@v1
 
-      - run: npm run build-storybook
-      - run: npm run test:ci
-      - run: npm run build
+      - run: npm run build:lib
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

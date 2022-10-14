@@ -23,10 +23,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:lib": "rm -rf lib && tsc --project tsconfig.lib.json",
-    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "test": "react-scripts test --watchAll=false",
+    "test:ci": "start-server-and-test storybook http://localhost:6006 test"
   },
   "eslintConfig": {
     "extends": [
@@ -72,6 +73,7 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
     "puppeteer": "^3.0.0",
+    "start-server-and-test": "^1.14.0",
     "type-fest": "^3.1.0",
     "webpack": "^5.74.0"
   }

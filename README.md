@@ -66,7 +66,7 @@ import ChordSVG from "react-chord-svg";
 ## Options
 
 ```typescript
-interface Props {
+interface Props extends SVGProps<SVGSVGElement> {
   notes: Note[];
   title?: string;
   startAtFret?: number;

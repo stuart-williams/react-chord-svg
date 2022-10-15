@@ -1,6 +1,6 @@
 # React Chord SVG
 
-![Minified](https://badgen.net/badge//bundlephobia/min/react-chord-svg?icon=github)
+![Minified Size](https://img.shields.io/bundlephobia/min/react-chord-svg?color=green)
 
 ![C Major](https://raw.githubusercontent.com/stuart-williams/react-chord-svg/main/svg/c-major-g-shape.svg)
 

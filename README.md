@@ -1,6 +1,6 @@
 # React Chord SVG
 
-![C Major - E Shape](https://raw.githubusercontent.com/stuart-williams/react-chord-svg/main/svg/c-major-g-shape.svg)
+![C Major](https://raw.githubusercontent.com/stuart-williams/react-chord-svg/main/svg/c-major-g-shape.svg)
 
 ## Install
 

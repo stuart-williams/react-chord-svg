@@ -1,6 +1,6 @@
 {
   "name": "react-chord-svg",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "private": false,
   "sideEffects": false,
   "files": [
@@ -13,9 +13,10 @@
     "guitar",
     "diagram"
   ],
-  "type": "module",
-  "main": "./lib/index.js",
-  "module": "./lib/index.js",
+  "main": "lib/index.js",
+  "homepage": "https://github.com/stuart-williams/react-chord-svg",
+  "bugs": "https://github.com/stuart-williams/react-chord-svg/issues",
+  "description": "React component to generate chord diagram SVGs",
   "scripts": {
     "test": "jest",
     "build": "tsc --project tsconfig.lib.json",

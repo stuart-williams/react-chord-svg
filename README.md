@@ -65,3 +65,26 @@ import ChordSVG from "react-chord-svg";
   ]}
 />
 ```
+
+## Options
+
+```typescript
+interface Props {
+  notes: Note[];
+  title?: string;
+  startAtFret?: number;
+  numberOfFrets?: number;
+  numberOfStrings?: number;
+}
+
+interface Note {
+  bar?: number;
+  fret?: number;
+  text?: string;
+  string: number;
+  color?: string;
+  muted?: boolean;
+  opacity?: number;
+  textColor?: string;
+}
+```

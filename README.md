@@ -16,7 +16,7 @@ npm install react-chord-svg --save
 
 ## Usage
 
-```
+```jsx
 import ChordSVG from "react-chord-svg";
 
 <ChordSVG

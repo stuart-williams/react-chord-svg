@@ -1,11 +1,11 @@
-name: NPM Publish
+name: Publish to NPM
 
 on:
   release:
     types: [created]
 
 jobs:
-  publish:
+  npm-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,6 +15,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - uses: bahmutov/npm-install@v1
+
       - run: npm run build
       - run: npm publish
         env:

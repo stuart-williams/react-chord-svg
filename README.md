@@ -1,5 +1,7 @@
 # React Chord SVG
 
+![Minified Size](https://img.shields.io/bundlephobia/min/react-chord-svg)
+
 ![C Major](https://raw.githubusercontent.com/stuart-williams/react-chord-svg/main/svg/c-major-g-shape.svg)
 
 ## Install
@@ -66,7 +68,7 @@ import ChordSVG from "react-chord-svg";
 ## Options
 
 ```typescript
-interface Props {
+interface Props extends SVGProps<SVGSVGElement> {
   notes: Note[];
   title?: string;
   startAtFret?: number;

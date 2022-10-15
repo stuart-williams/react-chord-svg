@@ -1,6 +1,6 @@
 # React Chord SVG
 
-![C Major - E Shape](https://raw.githubusercontent.com/stuart-williams/react-chord-svg/main/svg/c-major-e-shape.svg)
+![C Major - E Shape](https://raw.githubusercontent.com/stuart-williams/react-chord-svg/main/svg/c-major-g-shape.svg)
 
 ## Install
 
@@ -18,38 +18,35 @@ npm install react-chord-svg --save
 import ChordSVG from "react-chord-svg";
 
 <ChordSVG
-  title="C Major - E Shape"
-  startAtFret={8}
-  numberOfFrets={4}
+  title="C Major - G Shape"
+  startAtFret={5}
+  numberOfFrets={5}
   notes={[
     {
-      fret: 1,
       string: 1,
-      bar: 6,
+      muted: true,
+    },
+    {
+      string: 2,
+      muted: true,
+    },
+    {
+      fret: 1,
+      string: 3,
+      bar: 4,
       color: "gray",
       opacity: 0.5,
     },
     {
       fret: 1,
-      string: 1,
+      string: 3,
+      text: "1",
+    },
+    {
+      fret: 1,
+      string: 4,
       text: "1",
       color: "red",
-    },
-    {
-      fret: 3,
-      string: 2,
-      text: "3",
-    },
-    {
-      fret: 3,
-      string: 3,
-      text: "4",
-      color: "red",
-    },
-    {
-      fret: 2,
-      string: 4,
-      text: "2",
     },
     {
       fret: 1,
@@ -57,13 +54,13 @@ import ChordSVG from "react-chord-svg";
       text: "1",
     },
     {
-      fret: 1,
+      fret: 4,
       string: 6,
-      text: "1",
+      text: "4",
       color: "red",
-    }
+    },
   ]}
-/>
+/>;
 ```
 
 ## Options

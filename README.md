@@ -8,8 +8,6 @@
 yarn add react-chord-svg
 ```
 
-or
-
 ```bash
 npm install react-chord-svg --save
 ```

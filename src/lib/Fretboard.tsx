@@ -1,4 +1,5 @@
 import type { FC, PropsWithChildren } from "react";
+import { padding } from "./const";
 import { times } from "./utils";
 
 const Border: FC = () => (
@@ -30,7 +31,7 @@ const Fretboard: FC<PropsWithChildren<FretboardProps>> = ({
     x="100"
     width="300"
     overflow="visible"
-    height={`calc(100% - ${y + 1}px)`}
+    height={`calc(100% - ${y + padding + 1}px)`}
   >
     <Border />
     {times(numberOfFrets - 1, (i) => (

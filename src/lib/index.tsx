@@ -1,5 +1,5 @@
 import type { FC, SVGProps } from "react";
-import { noteRadius, openNoteRadius, titleFontSize } from "./const";
+import { noteRadius, openNoteRadius, padding, titleFontSize } from "./const";
 import Fretboard from "./Fretboard";
 import NoteFactory from "./NoteFactory";
 import Title from "./Title";
@@ -21,10 +21,9 @@ const ChordSVG: FC<DiagramProps> = ({
   numberOfStrings = 6,
   ...props
 }) => {
-  const topPad = 10;
   const fretSpacing = 100 / numberOfFrets;
   const stringSpacing = 100 / (numberOfStrings - 1);
-  const baseY = openNoteRadius * 2 + (title ? titleFontSize * 2.5 : topPad);
+  const baseY = openNoteRadius * 2 + (title ? titleFontSize * 2.5 : padding);
 
   return (
     <svg
@@ -34,7 +33,7 @@ const ChordSVG: FC<DiagramProps> = ({
       {...props}
     >
       {title && (
-        <Title x="50%" y={topPad} alignmentBaseline="hanging">
+        <Title x="50%" y={padding} alignmentBaseline="hanging">
           {title}
         </Title>
       )}

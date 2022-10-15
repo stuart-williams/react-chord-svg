@@ -1,3 +1,4 @@
+export const padding = 20;
 export const noteRadius = 24;
 export const openNoteRadius = noteRadius * 0.8;
 export const mutedNoteSize = noteRadius * 0.7;

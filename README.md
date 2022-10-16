@@ -1,5 +1,7 @@
 # React Chord SVG
 
+React component to generate chord diagram SVGs
+
 ![Minified Size](https://img.shields.io/bundlephobia/min/react-chord-svg)
 
 ![C Major](https://raw.githubusercontent.com/stuart-williams/react-chord-svg/main/svg/c-major-g-shape.svg)

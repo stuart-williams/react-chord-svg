@@ -1,8 +1,7 @@
 {
   "name": "react-chord-svg",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "private": false,
-  "sideEffects": false,
   "files": [
     "lib/**/*"
   ],

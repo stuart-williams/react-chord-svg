@@ -22,9 +22,9 @@ export interface FretboardProps {
 
 const Fretboard: FC<PropsWithChildren<FretboardProps>> = ({
   y,
+  children,
   numberOfFrets,
   numberOfStrings,
-  children,
 }) => (
   <svg
     y={y}

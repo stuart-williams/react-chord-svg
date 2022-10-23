@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof ChordSVG> = (args) => (
 export const MajorP1 = Template.bind({});
 MajorP1.args = {
   title: "Major P1",
-  numberOfFrets: 4,
+  numberOfFrets: 5,
   notes: [
     {
       string: 1,

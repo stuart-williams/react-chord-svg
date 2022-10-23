@@ -2,6 +2,7 @@ import type { FC, SVGProps } from "react";
 import {
   defaultNumberOfFrets,
   defaultNumberOfStrings,
+  fretHeight,
   noteRadius,
   openNoteRadius,
   padding,
@@ -31,11 +32,7 @@ const ChordSVG: FC<DiagramProps> = ({
   const fretSpacing = 100 / numberOfFrets;
   const stringSpacing = 100 / (numberOfStrings - 1);
   const baseY = openNoteRadius * 2 + (title ? titleFontSize * 2.5 : padding);
-
-  const viewBoxH = Math.max(
-    550 + (numberOfFrets - (defaultNumberOfFrets - 1)) * 80,
-    550
-  );
+  const viewBoxH = baseY + numberOfFrets * fretHeight;
 
   return (
     <svg

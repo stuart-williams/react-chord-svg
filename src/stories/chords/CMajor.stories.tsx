@@ -96,6 +96,7 @@ G.args = {
   title: "C Major - G Shape",
   numberOfFrets: 5,
   startAtFret: 5,
+  watermark: "Created with chord.love",
   notes: [
     {
       string: 1,
@@ -142,6 +143,7 @@ E.args = {
   title: "C Major - E Shape",
   numberOfFrets: 4,
   startAtFret: 8,
+  watermark: "Created with chord.love",
   notes: [
     {
       fret: 1,

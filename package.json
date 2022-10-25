@@ -1,6 +1,6 @@
 {
   "name": "react-chord-svg",
-  "version": "0.3.12",
+  "version": "0.4.0",
   "private": false,
   "files": [
     "lib/**/*"
@@ -22,6 +22,7 @@
     "test": "jest",
     "build": "tsc --project tsconfig.lib.json",
     "start": "start-storybook -p 6006",
+    "dev": "start-storybook -p 6006",
     "build:storybook": "build-storybook",
     "test:ci": "start-server-and-test 'http-server storybook-static -c-1 --silent -p 6006' 6006 test"
   },

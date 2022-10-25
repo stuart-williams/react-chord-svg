@@ -1,11 +1,15 @@
 import { FC, SVGProps } from "react";
 import { fontFamily, titleFontSize } from "./const";
 
-const Title: FC<SVGProps<SVGTextElement>> = ({ children, ...props }) => (
+const Title: FC<SVGProps<SVGTextElement>> = ({
+  children,
+  fontSize = titleFontSize,
+  ...props
+}) => (
   <text
     textAnchor="middle"
+    fontSize={fontSize}
     fontFamily={fontFamily}
-    fontSize={titleFontSize}
     alignmentBaseline="central"
     {...props}
   >

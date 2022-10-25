@@ -1,5 +1,4 @@
-import { FC, PropsWithChildren } from "react";
-import { padding } from "./const";
+import { FC, PropsWithChildren, SVGProps } from "react";
 import { times } from "./utils";
 
 const Border: FC = () => (
@@ -14,25 +13,20 @@ const String: FC<{ x: string }> = ({ x }) => (
   <line x1={x} x2={x} y1="0" y2="100%" stroke="black" strokeWidth="2" />
 );
 
-export interface FretboardProps {
+export interface FretboardProps extends SVGProps<SVGSVGElement> {
   y: number;
   numberOfFrets: number;
+  height: string | number;
   numberOfStrings: number;
 }
 
 const Fretboard: FC<PropsWithChildren<FretboardProps>> = ({
-  y,
   children,
   numberOfFrets,
   numberOfStrings,
+  ...props
 }) => (
-  <svg
-    y={y}
-    x="100"
-    width="300"
-    overflow="visible"
-    height={`calc(100% - ${y + padding + 1}px)`}
-  >
+  <svg width="300" overflow="visible" {...props}>
     <Border />
     {times(numberOfFrets - 1, (i) => (
       <Fret key={i} y={(i + 1) * (100 / numberOfFrets) + "%"} />

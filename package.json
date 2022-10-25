@@ -12,7 +12,6 @@
     "guitar",
     "diagram"
   ],
-  "type": "module",
   "main": "lib/index.js",
   "homepage": "https://github.com/stuart-williams/react-chord-svg#readme",
   "bugs": {
@@ -22,6 +21,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc --project tsconfig.lib.json",
+    "postbuild": "node scripts/postbuild",
     "start": "start-storybook -p 6006",
     "dev": "start-storybook -p 6006",
     "build:storybook": "build-storybook",

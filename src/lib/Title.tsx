@@ -1,4 +1,4 @@
-import type { FC, SVGProps } from "react";
+import { FC, SVGProps } from "react";
 import { fontFamily, titleFontSize } from "./const";
 
 const Title: FC<SVGProps<SVGTextElement>> = ({ children, ...props }) => (

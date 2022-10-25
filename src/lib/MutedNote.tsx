@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { FC } from "react";
 import { mutedNoteSize } from "./const";
 
 export interface MutedNoteProps {

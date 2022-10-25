@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { FC } from "react";
 import BarredNote from "./BarredNote";
 import MutedNote from "./MutedNote";
 import OpenNote from "./OpenNote";

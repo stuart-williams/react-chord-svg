@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { FC } from "react";
 import { openNoteRadius } from "./const";
 import SimpleNote from "./SimpleNote";
 import type { Note } from "./types";

@@ -1,13 +1,13 @@
 import { FC, SVGProps } from "react";
-import { fontFamily, titleFontSize } from "./const";
+import { fontFamily } from "./const";
 
 interface Props extends SVGProps<SVGTextElement> {
   fontSize?: number;
 }
 
-const Title: FC<Props> = ({ children, fontSize = titleFontSize, ...props }) => (
+const Text: FC<Props> = ({ children, fontSize = 18, ...props }) => (
   <text
-    dy={fontSize / 2}
+    dy="0.35em"
     textAnchor="middle"
     fontSize={fontSize}
     fontFamily={fontFamily}
@@ -17,4 +17,4 @@ const Title: FC<Props> = ({ children, fontSize = titleFontSize, ...props }) => (
   </text>
 );
 
-export default Title;
+export default Text;

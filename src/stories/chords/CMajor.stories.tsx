@@ -58,30 +58,12 @@ A.args = {
     {
       fret: 1,
       string: 2,
-      color: "red",
       text: "1",
     },
     {
       fret: 3,
       string: 3,
       bar: 3,
-      color: "gray",
-      opacity: 0.5,
-    },
-    {
-      fret: 3,
-      string: 3,
-      text: "3",
-    },
-    {
-      fret: 3,
-      string: 4,
-      text: "3",
-      color: "red",
-    },
-    {
-      fret: 3,
-      string: 5,
       text: "3",
     },
     {

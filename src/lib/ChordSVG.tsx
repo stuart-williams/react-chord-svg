@@ -12,7 +12,7 @@ import {
 } from "./const";
 import Fretboard from "./Fretboard";
 import NoteFactory from "./NoteFactory";
-import Title from "./Title";
+import Text from "./Text";
 import type { Note } from "./types";
 
 export interface ChordProps extends SVGProps<SVGSVGElement> {
@@ -50,9 +50,9 @@ const ChordSVG: FC<ChordProps> = ({
       {...props}
     >
       {title && (
-        <Title x="50%" y={padding}>
+        <Text x="50%" y={padding} fontSize={titleFontSize}>
           {title}
-        </Title>
+        </Text>
       )}
       <Fretboard
         x="100"
@@ -62,9 +62,13 @@ const ChordSVG: FC<ChordProps> = ({
         numberOfStrings={numberOfStrings}
       >
         {startAtFret && (
-          <Title x={-noteRadius * 3} y={fretSpacing / 2}>
+          <Text
+            x={-noteRadius * 3}
+            y={fretSpacing / 2}
+            fontSize={titleFontSize}
+          >
             {startAtFret + "fr"}
-          </Title>
+          </Text>
         )}
         {notes.map((note, i) => (
           <NoteFactory
@@ -82,9 +86,9 @@ const ChordSVG: FC<ChordProps> = ({
           height={watermarkFontSize}
           y={top + fretboardH + watermarkFontSize}
         >
-          <Title fill="gray" fontSize={watermarkFontSize}>
+          <Text fill="gray" fontSize={watermarkFontSize}>
             {watermark}
-          </Title>
+          </Text>
         </svg>
       )}
     </svg>

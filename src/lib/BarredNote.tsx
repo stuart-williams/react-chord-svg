@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { fontFamily, noteRadius } from "./const";
+import { noteRadius } from "./const";
+import Text from "./Text";
 import type { Note } from "./types";
 
 export interface BarredNoteProps {
@@ -32,16 +33,9 @@ const BarredNote: FC<BarredNoteProps> = ({
           fillOpacity={note.opacity}
           fill={note.color || "black"}
         />
-        <text
-          x="50%"
-          y={noteRadius}
-          textAnchor="middle"
-          fontFamily={fontFamily}
-          alignmentBaseline="central"
-          fill={note.textColor || "white"}
-        >
+        <Text x="50%" y={noteRadius} fill={note.textColor || "white"}>
           {note.text}
-        </text>
+        </Text>
       </svg>
     );
   }

@@ -1,5 +1,6 @@
 import { FC, SVGProps } from "react";
 import { fontFamily, noteRadius } from "./const";
+import Text from "./Text";
 import type { Note } from "./types";
 
 export interface SimpleNoteProps extends SVGProps<SVGCircleElement> {
@@ -13,14 +14,9 @@ const SimpleNote: FC<SimpleNoteProps> = ({ x, y, note, ...props }) => {
     return (
       <svg x={x} y={y} overflow="visible">
         <circle r={noteRadius} fill={note.color || "black"} {...props} />
-        <text
-          textAnchor="middle"
-          fontFamily={fontFamily}
-          alignmentBaseline="central"
-          fill={note.textColor || "white"}
-        >
+        <Text fontFamily={fontFamily} fill={note.textColor || "white"}>
           {note.text}
-        </text>
+        </Text>
       </svg>
     );
   }

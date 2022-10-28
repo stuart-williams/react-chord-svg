@@ -33,8 +33,9 @@ const ChordSVG: FC<ChordProps> = ({
   numberOfStrings = defaultNumberOfStrings,
   ...props
 }) => {
-  const openNotesH = notes.find((n) => !n.fret) ? openNoteRadius * 2.5 : 0;
-  const top = openNotesH + (title ? titleFontSize : 0) + padding * 2;
+  const hasOpen = notes.find((n) => !n.fret);
+  const openNotesH = hasOpen ? openNoteRadius * 2 + padding : 0;
+  const top = openNotesH + (title ? titleFontSize : 0) + padding;
   const bottom = (watermark ? watermarkFontSize : 0) + padding;
   const fretboardH = fretHeight * numberOfFrets;
   const fretSpacing = fretboardH / numberOfFrets;
@@ -49,7 +50,7 @@ const ChordSVG: FC<ChordProps> = ({
       {...props}
     >
       {title && (
-        <Title x="50%" y={padding} alignmentBaseline="hanging">
+        <Title x="50%" y={padding}>
           {title}
         </Title>
       )}

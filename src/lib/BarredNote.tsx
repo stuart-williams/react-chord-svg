@@ -3,8 +3,8 @@ import { fontFamily, noteRadius } from "./const";
 import type { Note } from "./types";
 
 export interface BarredNoteProps {
-  x: string;
-  y: string;
+  x: number;
+  y: number;
   note: Note;
   bar: number;
   stringSpacing: number;
@@ -17,9 +17,9 @@ const BarredNote: FC<BarredNoteProps> = ({
   y: yProp,
   stringSpacing,
 }) => {
-  const x = `calc(${xProp} - ${noteRadius}px)`;
-  const y = `calc(${yProp} - ${noteRadius}px)`;
-  const width = `calc(${stringSpacing * (bar - 1)}% + ${noteRadius * 2}px`;
+  const x = xProp - noteRadius;
+  const y = yProp - noteRadius;
+  const width = stringSpacing * (bar - 1) + noteRadius * 2;
 
   if (note.text) {
     return (

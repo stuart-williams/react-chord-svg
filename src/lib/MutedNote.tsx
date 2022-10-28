@@ -2,11 +2,11 @@ import { FC } from "react";
 import { mutedNoteSize } from "./const";
 
 export interface MutedNoteProps {
-  x: string;
+  x: number;
 }
 
 const MutedNote: FC<MutedNoteProps> = ({ x }) => (
-  <svg x={`calc(${x} - ${mutedNoteSize}px)`} y={-mutedNoteSize * 2.5}>
+  <svg x={x - mutedNoteSize} y={-mutedNoteSize * 2.5}>
     <line
       x1="0"
       y1="0"

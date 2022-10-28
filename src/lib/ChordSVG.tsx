@@ -2,6 +2,7 @@ import { FC, SVGProps } from "react";
 import {
   defaultNumberOfFrets,
   defaultNumberOfStrings,
+  fretboardWidth,
   fretHeight,
   noteRadius,
   openNoteRadius,
@@ -32,11 +33,12 @@ const ChordSVG: FC<ChordProps> = ({
   numberOfStrings = defaultNumberOfStrings,
   ...props
 }) => {
-  const fretSpacing = 100 / numberOfFrets;
-  const stringSpacing = 100 / (numberOfStrings - 1);
+  const top = openNoteRadius * 2.5 + (title ? titleFontSize : 0) + padding * 2;
   const bottom = (watermark ? watermarkFontSize : 0) + padding;
-  const top = openNoteRadius * 2 + (title ? titleFontSize : 0) + padding * 2;
-  const viewBoxH = top + numberOfFrets * fretHeight;
+  const fretboardH = fretHeight * numberOfFrets;
+  const fretSpacing = fretboardH / numberOfFrets;
+  const stringSpacing = fretboardWidth / (numberOfStrings - 1);
+  const viewBoxH = top + fretboardH + bottom;
 
   return (
     <svg
@@ -53,12 +55,12 @@ const ChordSVG: FC<ChordProps> = ({
       <Fretboard
         x="100"
         y={top}
+        height={fretboardH}
         numberOfFrets={numberOfFrets}
         numberOfStrings={numberOfStrings}
-        height={`calc(100% - ${top + bottom}px)`}
       >
         {startAtFret && (
-          <Title x={-noteRadius * 2.5} y={fretSpacing / 2 + "%"}>
+          <Title x={-noteRadius * 3} y={fretSpacing / 2}>
             {startAtFret + "fr"}
           </Title>
         )}
@@ -76,7 +78,7 @@ const ChordSVG: FC<ChordProps> = ({
           x="50%"
           overflow="visible"
           height={watermarkFontSize}
-          y={`calc(100% - ${padding}px)`}
+          y={top + fretboardH + watermarkFontSize}
         >
           <Title fill="gray" fontSize={watermarkFontSize}>
             {watermark}

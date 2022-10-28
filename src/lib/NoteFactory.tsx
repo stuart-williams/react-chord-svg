@@ -16,7 +16,7 @@ const NoteFactory: FC<NoteFactoryProps> = ({
   fretSpacing,
   stringSpacing,
 }) => {
-  const x = (note.string - 1) * stringSpacing + "%";
+  const x = (note.string - 1) * stringSpacing;
 
   if (note.muted) {
     return <MutedNote x={x} />;
@@ -26,7 +26,7 @@ const NoteFactory: FC<NoteFactoryProps> = ({
     return <OpenNote x={x} note={note} />;
   }
 
-  const y = `calc(${fretSpacing * note.fret}% - ${fretSpacing / 2}%)`;
+  const y = fretSpacing * note.fret - fretSpacing / 2;
 
   if (note.bar && note.bar > 1) {
     return (

@@ -4,7 +4,7 @@ import SimpleNote from "./SimpleNote";
 import type { Note } from "./types";
 
 export interface OpenNoteProps {
-  x: string;
+  x: number;
   note: Note;
 }
 

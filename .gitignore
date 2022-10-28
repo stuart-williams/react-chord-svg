@@ -5,6 +5,7 @@
 
 # testing
 /coverage
+/src/__image_snapshots__/__diff_output__
 
 # production
 /lib

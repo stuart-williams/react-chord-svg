@@ -3,9 +3,9 @@ import { fontFamily, noteRadius } from "./const";
 import type { Note } from "./types";
 
 export interface SimpleNoteProps extends SVGProps<SVGCircleElement> {
+  x: number;
+  y: number;
   note: Note;
-  x: number | string;
-  y: number | string;
 }
 
 const SimpleNote: FC<SimpleNoteProps> = ({ x, y, note, ...props }) => {

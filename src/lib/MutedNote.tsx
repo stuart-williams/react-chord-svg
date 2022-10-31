@@ -6,7 +6,7 @@ export interface MutedNoteProps {
 }
 
 const MutedNote: FC<MutedNoteProps> = ({ x }) => (
-  <svg x={x - noteRadius} y={-(noteRadius * 2.5 + 1)} overflow="visible">
+  <svg x={x - noteRadius} y={-(noteRadius * 2.5)} overflow="visible">
     <line
       x1="0"
       y1="0"

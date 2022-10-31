@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { noteRadius } from "./config";
+import { fretWidth, noteRadius } from "./config";
 import Text from "./Text";
 import type { Note } from "./types";
 
@@ -8,19 +8,12 @@ export interface BarredNoteProps {
   y: number;
   note: Note;
   bar: number;
-  stringSpacing: number;
 }
 
-const BarredNote: FC<BarredNoteProps> = ({
-  bar,
-  note,
-  x: xProp,
-  y: yProp,
-  stringSpacing,
-}) => {
+const BarredNote: FC<BarredNoteProps> = ({ bar, note, x: xProp, y: yProp }) => {
   const x = xProp - noteRadius;
   const y = yProp - noteRadius;
-  const width = stringSpacing * (bar - 1) + noteRadius * 2;
+  const width = fretWidth * (bar - 1) + noteRadius * 2;
 
   if (note.text) {
     return (

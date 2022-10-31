@@ -1,8 +1,8 @@
 export const padding = 20;
+export const fretWidth = 56;
 export const noteRadius = 18;
-export const fretHeight = 86;
+export const fretHeight = 84;
 export const titleFontSize = 30;
-export const fretboardWidth = 290;
 export const watermarkFontSize = 22;
 export const defaultNumberOfFrets = 5;
 export const defaultNumberOfStrings = 6;

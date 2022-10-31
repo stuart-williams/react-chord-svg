@@ -1,5 +1,6 @@
 import { FC } from "react";
 import BarredNote from "./BarredNote";
+import { fretHeight, fretWidth } from "./config";
 import MutedNote from "./MutedNote";
 import OpenNote from "./OpenNote";
 import SimpleNote from "./SimpleNote";
@@ -7,16 +8,10 @@ import type { Note } from "./types";
 
 export interface NoteFactoryProps {
   note: Note;
-  fretSpacing: number;
-  stringSpacing: number;
 }
 
-const NoteFactory: FC<NoteFactoryProps> = ({
-  note,
-  fretSpacing,
-  stringSpacing,
-}) => {
-  const x = (note.string - 1) * stringSpacing;
+const NoteFactory: FC<NoteFactoryProps> = ({ note }) => {
+  const x = (note.string - 1) * fretWidth;
 
   if (note.muted) {
     return <MutedNote x={x} />;
@@ -26,18 +21,10 @@ const NoteFactory: FC<NoteFactoryProps> = ({
     return <OpenNote x={x} note={note} />;
   }
 
-  const y = fretSpacing * note.fret - fretSpacing / 2;
+  const y = fretHeight * note.fret - fretHeight / 2;
 
   if (note.bar && note.bar > 1) {
-    return (
-      <BarredNote
-        x={x}
-        y={y}
-        note={note}
-        bar={note.bar}
-        stringSpacing={stringSpacing}
-      />
-    );
+    return <BarredNote x={x} y={y} note={note} bar={note.bar} />;
   }
 
   return <SimpleNote x={x} y={y} note={note} />;

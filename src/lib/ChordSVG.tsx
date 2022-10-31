@@ -2,8 +2,8 @@ import { FC, SVGProps } from "react";
 import {
   defaultNumberOfFrets,
   defaultNumberOfStrings,
-  fretboardWidth,
   fretHeight,
+  fretWidth,
   noteRadius,
   openNoteRadius,
   padding,
@@ -33,13 +33,12 @@ const ChordSVG: FC<ChordProps> = ({
   numberOfStrings = defaultNumberOfStrings,
   ...props
 }) => {
-  const hasOpen = notes.find((n) => !n.fret);
-  const openNotesH = hasOpen ? openNoteRadius * 2 + padding : 0;
+  const hasOpenNotes = notes.find((n) => !n.fret);
+  const openNotesH = hasOpenNotes ? openNoteRadius * 2 + padding : 0;
   const top = openNotesH + (title ? titleFontSize : 0) + padding;
   const bottom = (watermark ? watermarkFontSize : 0) + padding;
   const fretboardH = fretHeight * numberOfFrets;
-  const fretSpacing = fretboardH / numberOfFrets;
-  const stringSpacing = fretboardWidth / (numberOfStrings - 1);
+  const fretboardW = fretWidth * (numberOfStrings - 1);
   const viewBoxH = top + fretboardH + bottom;
 
   return (
@@ -57,26 +56,18 @@ const ChordSVG: FC<ChordProps> = ({
       <Fretboard
         x="100"
         y={top}
+        width={fretboardW}
         height={fretboardH}
         numberOfFrets={numberOfFrets}
         numberOfStrings={numberOfStrings}
       >
         {startAtFret && (
-          <Text
-            x={-noteRadius * 3}
-            y={fretSpacing / 2}
-            fontSize={titleFontSize}
-          >
+          <Text x={-noteRadius * 3} y={fretHeight / 2} fontSize={titleFontSize}>
             {startAtFret + "fr"}
           </Text>
         )}
         {notes.map((note, i) => (
-          <NoteFactory
-            key={i}
-            note={note}
-            fretSpacing={fretSpacing}
-            stringSpacing={stringSpacing}
-          />
+          <NoteFactory key={i} note={note} />
         ))}
       </Fretboard>
       {watermark && (

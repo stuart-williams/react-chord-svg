@@ -1,4 +1,5 @@
 import { FC, PropsWithChildren, SVGProps } from "react";
+import { fretboardWidth } from "./config";
 import { times } from "./utils";
 
 const Border: FC = () => (
@@ -26,7 +27,7 @@ const Fretboard: FC<PropsWithChildren<FretboardProps>> = ({
   numberOfStrings,
   ...props
 }) => (
-  <svg width="300" overflow="visible" {...props}>
+  <svg width={fretboardWidth} overflow="visible" {...props}>
     <Border />
     {times(numberOfFrets - 1, (i) => (
       <Fret key={i} y={(i + 1) * (100 / numberOfFrets) + "%"} />

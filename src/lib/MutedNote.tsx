@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { mutedNoteSize } from "./const";
+import { mutedNoteSize } from "./config";
 
 export interface MutedNoteProps {
   x: number;

@@ -1,5 +1,5 @@
 import { FC, SVGProps } from "react";
-import { fontFamily, noteRadius } from "./const";
+import { fontFamily, noteRadius } from "./config";
 import Text from "./Text";
 import type { Note } from "./types";
 

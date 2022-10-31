@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { noteRadius } from "./const";
+import { noteRadius } from "./config";
 import Text from "./Text";
 import type { Note } from "./types";
 

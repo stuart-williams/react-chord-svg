@@ -1,5 +1,5 @@
 import { FC, SVGProps } from "react";
-import { fontFamily } from "./const";
+import { fontFamily } from "./config";
 
 interface Props extends SVGProps<SVGTextElement> {
   fontSize?: number;

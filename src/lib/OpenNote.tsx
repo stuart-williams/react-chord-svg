@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { openNoteRadius } from "./const";
+import { openNoteRadius } from "./config";
 import SimpleNote from "./SimpleNote";
 import type { Note } from "./types";
 

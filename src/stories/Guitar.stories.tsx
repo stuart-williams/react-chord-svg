@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import ChordSVG from "../../lib";
+import ChordSVG from "../lib";
 
 export default {
-  title: "Chords/C Major",
+  title: "Guitar/C Major",
   component: ChordSVG,
 } as ComponentMeta<typeof ChordSVG>;
 
@@ -14,6 +14,7 @@ export const C = Template.bind({});
 C.args = {
   title: "C Major - C Shape",
   numberOfFrets: 4,
+  watermark: "Created with chord.love",
   notes: [
     {
       string: 1,
@@ -50,6 +51,7 @@ A.args = {
   title: "C Major - A Shape",
   numberOfFrets: 4,
   startAtFret: 3,
+  watermark: "Created with chord.love",
   notes: [
     {
       string: 1,
@@ -175,6 +177,7 @@ D.args = {
   title: "C Major - D Shape",
   numberOfFrets: 5,
   startAtFret: 10,
+  watermark: "Created with chord.love",
   notes: [
     {
       fret: 3,

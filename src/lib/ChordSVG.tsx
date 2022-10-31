@@ -37,7 +37,6 @@ const ChordSVG: FC<ChordProps> = ({
   const openNotesH = hasOpen ? openNoteRadius * 2 + padding : 0;
   const top = openNotesH + (title ? titleFontSize : 0) + padding;
   const bottom = (watermark ? watermarkFontSize : 0) + padding;
-  console.log(fretHeight);
   const fretboardH = fretHeight * numberOfFrets;
   const fretSpacing = fretboardH / numberOfFrets;
   const stringSpacing = fretboardWidth / (numberOfStrings - 1);

@@ -4,8 +4,11 @@ import {
   defaultNumberOfStrings,
   fretHeight,
   fretWidth,
+  maxNumberOfFrets,
+  maxNumberOfStrings,
+  minNumberOfFrets,
+  minNumberOfStrings,
   noteRadius,
-  openNoteRadius,
   padding,
   titleFontSize,
   watermarkFontSize,
@@ -14,6 +17,7 @@ import Fretboard from "./Fretboard";
 import NoteFactory from "./NoteFactory";
 import Text from "./Text";
 import type { Note } from "./types";
+import { clamp } from "./utils";
 
 export interface ChordProps extends SVGProps<SVGSVGElement> {
   notes: Note[];
@@ -29,16 +33,18 @@ const ChordSVG: FC<ChordProps> = ({
   notes,
   watermark,
   startAtFret,
-  numberOfFrets = defaultNumberOfFrets,
-  numberOfStrings = defaultNumberOfStrings,
+  numberOfFrets: nfProp = defaultNumberOfFrets,
+  numberOfStrings: nsProp = defaultNumberOfStrings,
   ...props
 }) => {
+  const nf = clamp(nfProp, minNumberOfFrets, maxNumberOfFrets);
+  const ns = clamp(nsProp, minNumberOfStrings, maxNumberOfStrings);
   const hasOpenNotes = notes.find((n) => !n.fret);
-  const openNotesH = hasOpenNotes ? openNoteRadius * 2 + padding : 0;
+  const openNotesH = hasOpenNotes ? noteRadius * 2 + padding / 2 : 0;
   const top = openNotesH + (title ? titleFontSize : 0) + padding;
   const bottom = (watermark ? watermarkFontSize : 0) + padding;
-  const fretboardH = fretHeight * numberOfFrets;
-  const fretboardW = fretWidth * (numberOfStrings - 1);
+  const fretboardH = fretHeight * nf;
+  const fretboardW = fretWidth * (ns - 1);
   const viewBoxH = top + fretboardH + bottom;
 
   return (
@@ -54,12 +60,12 @@ const ChordSVG: FC<ChordProps> = ({
         </Text>
       )}
       <Fretboard
-        x="100"
+        x="50%"
         y={top}
+        numberOfFrets={nf}
         width={fretboardW}
         height={fretboardH}
-        numberOfFrets={numberOfFrets}
-        numberOfStrings={numberOfStrings}
+        numberOfStrings={ns}
       >
         {startAtFret && (
           <Text x={-noteRadius * 3} y={fretHeight / 2} fontSize={titleFontSize}>

@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import ChordSVG from "../lib";
 
 export default {
-  title: "Guitar/C Major",
+  title: "Guitar",
   component: ChordSVG,
 } as ComponentMeta<typeof ChordSVG>;
 

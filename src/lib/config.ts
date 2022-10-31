@@ -1,11 +1,13 @@
 export const padding = 20;
-export const fretWidth = 56;
+export const fretWidth = 52;
 export const noteRadius = 18;
-export const fretHeight = 84;
+export const fretHeight = 78;
 export const titleFontSize = 30;
+export const minNumberOfFrets = 4;
+export const maxNumberOfFrets = 12;
+export const minNumberOfStrings = 4;
+export const maxNumberOfStrings = 7;
 export const watermarkFontSize = 22;
 export const defaultNumberOfFrets = 5;
 export const defaultNumberOfStrings = 6;
-export const mutedNoteSize = noteRadius - 1;
-export const openNoteRadius = noteRadius - 1;
 export const fontFamily = "Arial, Helvetica, sans-serif";

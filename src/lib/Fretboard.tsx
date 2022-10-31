@@ -2,7 +2,7 @@ import { FC, PropsWithChildren, SVGProps } from "react";
 import { times } from "./utils";
 
 const Border: FC = () => (
-  <rect fill="none" width="100%" height="100%" strokeWidth="2" stroke="black" />
+  <rect fill="none" width="100%" height="100%" stroke="black" strokeWidth="2" />
 );
 
 const Fret: FC<{ y: string }> = ({ y }) => (
@@ -15,6 +15,7 @@ const String: FC<{ x: string }> = ({ x }) => (
 
 export interface FretboardProps extends SVGProps<SVGSVGElement> {
   y: number;
+  width: number;
   numberOfFrets: number;
   height: string | number;
   numberOfStrings: number;
@@ -28,14 +29,16 @@ const Fretboard: FC<PropsWithChildren<FretboardProps>> = ({
   ...props
 }) => (
   <svg width={width} overflow="visible" {...props}>
-    <Border />
-    {times(numberOfFrets - 1, (i) => (
-      <Fret key={i} y={(i + 1) * (100 / numberOfFrets) + "%"} />
-    ))}
-    {times(numberOfStrings - 2, (i) => (
-      <String key={i} x={(i + 1) * (100 / (numberOfStrings - 1)) + "%"} />
-    ))}
-    {children}
+    <svg x={-(width / 2)} overflow="visible">
+      <Border />
+      {times(numberOfFrets - 1, (i) => (
+        <Fret key={i} y={(i + 1) * (100 / numberOfFrets) + "%"} />
+      ))}
+      {times(numberOfStrings - 2, (i) => (
+        <String key={i} x={(i + 1) * (100 / (numberOfStrings - 1)) + "%"} />
+      ))}
+      {children}
+    </svg>
   </svg>
 );
 

@@ -22,6 +22,7 @@ const BarredNote: FC<BarredNoteProps> = ({ bar, note, x: xProp, y: yProp }) => {
           width="100%"
           rx={noteRadius}
           ry={noteRadius}
+          strokeWidth="2"
           height={noteRadius * 2}
           fillOpacity={note.opacity}
           fill={note.color || "black"}
@@ -38,6 +39,7 @@ const BarredNote: FC<BarredNoteProps> = ({ bar, note, x: xProp, y: yProp }) => {
       x={x}
       y={y}
       width={width}
+      strokeWidth="2"
       rx={noteRadius}
       ry={noteRadius}
       height={noteRadius * 2}

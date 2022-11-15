@@ -49,7 +49,7 @@ const ChordSVG: FC<ChordProps> = ({
 
   return (
     <svg
-      viewBox={`0 0 500 ${viewBoxH}`}
+      viewBox={`0 0 440 ${viewBoxH}`}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
       {...props}

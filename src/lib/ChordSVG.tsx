@@ -52,10 +52,11 @@ const ChordSVG: FC<ChordProps> = ({
   const fretboardH = fretHeight * nf;
   const fretboardW = fretWidth * (ns - 1);
   const viewBoxH = top + fretboardH + bottom;
+  const viewBoxW = fretboardW + 190;
 
   return (
     <svg
-      viewBox={`0 0 430 ${viewBoxH}`}
+      viewBox={`0 0 ${viewBoxW} ${viewBoxH}`}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
       {...props}

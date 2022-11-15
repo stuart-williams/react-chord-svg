@@ -1,7 +1,7 @@
 import { FC, SVGProps } from "react";
 import { fontFamily, noteRadius } from "./config";
 import Text from "./Text";
-import type { Note } from "./types";
+import { Note } from "./types";
 
 export interface SimpleNoteProps extends SVGProps<SVGCircleElement> {
   x: number;

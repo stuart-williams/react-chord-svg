@@ -4,24 +4,26 @@ import {
   defaultNumberOfStrings,
   fretHeight,
   fretWidth,
+  labelFontSize,
   maxNumberOfFrets,
   maxNumberOfStrings,
   minNumberOfFrets,
   minNumberOfStrings,
   noteRadius,
+  openNoteRadius,
   padding,
   titleFontSize,
-  watermarkFontSize,
 } from "./config";
 import Fretboard from "./Fretboard";
 import NoteFactory from "./NoteFactory";
 import Text from "./Text";
-import type { Note } from "./types";
+import { Label, Note } from "./types";
 import { clamp } from "./utils";
 
 export interface ChordProps extends SVGProps<SVGSVGElement> {
   notes: Note[];
   title?: string;
+  labels?: Label[];
   watermark?: string;
   startAtFret?: number;
   numberOfFrets?: number;
@@ -33,6 +35,7 @@ const ChordSVG: FC<ChordProps> = ({
   notes,
   watermark,
   startAtFret,
+  labels,
   numberOfFrets: nfProp = defaultNumberOfFrets,
   numberOfStrings: nsProp = defaultNumberOfStrings,
   ...props
@@ -40,16 +43,19 @@ const ChordSVG: FC<ChordProps> = ({
   const nf = clamp(nfProp, minNumberOfFrets, maxNumberOfFrets);
   const ns = clamp(nsProp, minNumberOfStrings, maxNumberOfStrings);
   const hasOpenNotes = notes.find((n) => !n.fret);
-  const openNotesH = hasOpenNotes ? noteRadius * 2 + padding / 2 : 0;
-  const top = openNotesH + (title ? titleFontSize : 0) + padding;
-  const bottom = (watermark ? watermarkFontSize : 0) + padding;
+  const titleH = title ? titleFontSize + padding / 2 : 0;
+  const openNotesH = hasOpenNotes ? openNoteRadius + padding / 2 : 0;
+  const top = openNotesH + titleH + padding;
+  const watermarkH = watermark ? labelFontSize : 0;
+  const labelsH = labels ? labelFontSize : 0;
+  const bottom = watermarkH + labelsH + padding;
   const fretboardH = fretHeight * nf;
   const fretboardW = fretWidth * (ns - 1);
   const viewBoxH = top + fretboardH + bottom;
 
   return (
     <svg
-      viewBox={`0 0 440 ${viewBoxH}`}
+      viewBox={`0 0 430 ${viewBoxH}`}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
       {...props}
@@ -60,8 +66,8 @@ const ChordSVG: FC<ChordProps> = ({
         </Text>
       )}
       <Fretboard
-        x="50%"
         y={top}
+        labels={labels}
         numberOfFrets={nf}
         width={fretboardW}
         height={fretboardH}
@@ -80,10 +86,10 @@ const ChordSVG: FC<ChordProps> = ({
         <svg
           x="50%"
           overflow="visible"
-          height={watermarkFontSize}
-          y={top + fretboardH + watermarkFontSize}
+          height={labelFontSize}
+          y={viewBoxH - labelFontSize}
         >
-          <Text fill="gray" fontSize={watermarkFontSize}>
+          <Text fill="gray" fontSize={labelFontSize}>
             {watermark}
           </Text>
         </svg>

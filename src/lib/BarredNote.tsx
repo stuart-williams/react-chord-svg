@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { fretWidth, noteRadius } from "./config";
 import Text from "./Text";
-import type { Note } from "./types";
+import { Note } from "./types";
 
 export interface BarredNoteProps {
   x: number;

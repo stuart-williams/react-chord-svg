@@ -14,7 +14,29 @@ export const C = Template.bind({});
 C.args = {
   title: "C Major - C Shape",
   numberOfFrets: 4,
-  watermark: "Created with chord.love",
+  watermark: "created with www.chord.love",
+  labels: [
+    {
+      string: 2,
+      text: "R",
+    },
+    {
+      string: 3,
+      text: "3",
+    },
+    {
+      string: 4,
+      text: "5",
+    },
+    {
+      string: 5,
+      text: "R",
+    },
+    {
+      string: 6,
+      text: "3",
+    },
+  ],
   notes: [
     {
       string: 1,
@@ -51,7 +73,7 @@ A.args = {
   title: "C Major - A Shape",
   numberOfFrets: 4,
   startAtFret: 3,
-  watermark: "Created with chord.love",
+  watermark: "created with www.chord.love",
   notes: [
     {
       string: 1,
@@ -80,7 +102,7 @@ G.args = {
   title: "C Major - G Shape",
   numberOfFrets: 5,
   startAtFret: 5,
-  watermark: "Created with chord.love",
+  watermark: "created with www.chord.love",
   notes: [
     {
       string: 1,
@@ -127,7 +149,7 @@ E.args = {
   title: "C Major - E Shape",
   numberOfFrets: 4,
   startAtFret: 8,
-  watermark: "Created with chord.love",
+  watermark: "created with www.chord.love",
   notes: [
     {
       fret: 1,
@@ -177,7 +199,7 @@ D.args = {
   title: "C Major - D Shape",
   numberOfFrets: 5,
   startAtFret: 10,
-  watermark: "Created with chord.love",
+  watermark: "created with www.chord.love",
   notes: [
     {
       fret: 3,

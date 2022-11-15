@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { noteRadius } from "./config";
+import { openNoteRadius } from "./config";
 import SimpleNote from "./SimpleNote";
-import type { Note } from "./types";
+import { Note } from "./types";
 
 export interface OpenNoteProps {
   x: number;
@@ -12,10 +12,10 @@ const OpenNote: FC<OpenNoteProps> = ({ x, note }) => (
   <SimpleNote
     x={x}
     fill="none"
-    r={noteRadius}
     strokeWidth="2"
+    r={openNoteRadius}
     stroke={note.color || "black"}
-    y={noteRadius - noteRadius * 2.5}
+    y={openNoteRadius - openNoteRadius * 2.5}
     note={{
       ...note,
       textColor: note.textColor || "black",

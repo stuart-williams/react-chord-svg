@@ -8,3 +8,8 @@ export interface Note {
   opacity?: number;
   textColor?: string;
 }
+
+export interface Label {
+  text: string;
+  string: number;
+}

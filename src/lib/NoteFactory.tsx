@@ -4,7 +4,7 @@ import { fretHeight, fretWidth } from "./config";
 import MutedNote from "./MutedNote";
 import OpenNote from "./OpenNote";
 import SimpleNote from "./SimpleNote";
-import type { Note } from "./types";
+import { Note } from "./types";
 
 export interface NoteFactoryProps {
   note: Note;

@@ -20,7 +20,7 @@ export interface FretboardProps extends SVGProps<SVGSVGElement> {
   y: number;
   width: number;
   height: number;
-  labels?: Label[];
+  labels: Label[];
   numberOfFrets: number;
   numberOfStrings: number;
 }

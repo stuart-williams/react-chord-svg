@@ -34,8 +34,8 @@ const ChordSVG: FC<ChordProps> = ({
   title,
   notes,
   watermark,
+  labels = [],
   startAtFret,
-  labels,
   numberOfFrets: nfProp = defaultNumberOfFrets,
   numberOfStrings: nsProp = defaultNumberOfStrings,
   ...props
@@ -47,7 +47,7 @@ const ChordSVG: FC<ChordProps> = ({
   const openNotesH = hasOpenNotes ? openNoteRadius + padding / 2 : 0;
   const top = openNotesH + titleH + padding;
   const watermarkH = watermark ? labelFontSize : 0;
-  const labelsH = labels ? labelFontSize : 0;
+  const labelsH = labels.length ? labelFontSize : 0;
   const bottom = watermarkH + labelsH + padding;
   const fretboardH = fretHeight * nf;
   const fretboardW = fretWidth * (ns - 1);

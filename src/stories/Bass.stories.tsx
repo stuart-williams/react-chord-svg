@@ -15,7 +15,7 @@ C4String.args = {
   title: "C Major",
   numberOfFrets: 4,
   numberOfStrings: 4,
-  watermark: "created with www.chord.love",
+  watermark: "www.chord.love",
   notes: [
     {
       string: 1,
@@ -43,7 +43,7 @@ C5String.args = {
   title: "C Major",
   numberOfFrets: 4,
   numberOfStrings: 5,
-  watermark: "created with www.chord.love",
+  watermark: "www.chord.love",
   notes: [
     {
       string: 1,

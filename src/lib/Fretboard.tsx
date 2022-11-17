@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren, SVGProps } from "react";
-import { fretHeight, fretWidth, labelFontSize } from "./config";
+import { fretHeight, fretWidth, labelFontSize, nutHeight } from "./config";
 import Text from "./Text";
 import { Label } from "./types";
 import { times } from "./utils";
@@ -21,6 +21,7 @@ export interface FretboardProps extends SVGProps<SVGSVGElement> {
   width: number;
   height: number;
   labels: Label[];
+  startAtFret: number;
   numberOfFrets: number;
   numberOfStrings: number;
 }
@@ -29,6 +30,7 @@ const Fretboard: FC<PropsWithChildren<FretboardProps>> = ({
   width,
   height,
   children,
+  startAtFret,
   numberOfFrets,
   numberOfStrings,
   labels,
@@ -36,6 +38,16 @@ const Fretboard: FC<PropsWithChildren<FretboardProps>> = ({
 }) => (
   <svg x="50%" width={width} height={height} overflow="visible" {...props}>
     <svg x={-(width / 2)} overflow="visible">
+      {!startAtFret && (
+        <line
+          x1={-1}
+          stroke="black"
+          x2={width + 1}
+          y1={nutHeight - 2}
+          y2={nutHeight - 2}
+          strokeWidth={nutHeight}
+        />
+      )}
       <Border width={width} height={height} />
       {times(numberOfFrets - 1, (i) => (
         <Fret key={i} width={width} y={(i + 1) * fretHeight} />

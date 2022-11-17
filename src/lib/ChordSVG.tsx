@@ -35,7 +35,7 @@ const ChordSVG: FC<ChordProps> = ({
   notes,
   watermark,
   labels = [],
-  startAtFret,
+  startAtFret = 0,
   numberOfFrets: nfProp = defaultNumberOfFrets,
   numberOfStrings: nsProp = defaultNumberOfStrings,
   ...props
@@ -73,6 +73,7 @@ const ChordSVG: FC<ChordProps> = ({
         width={fretboardW}
         height={fretboardH}
         numberOfStrings={ns}
+        startAtFret={startAtFret}
       >
         {startAtFret && (
           <Text x={-noteRadius * 3} y={fretHeight / 2} fontSize={titleFontSize}>
@@ -90,7 +91,7 @@ const ChordSVG: FC<ChordProps> = ({
           height={labelFontSize}
           y={viewBoxH - labelFontSize}
         >
-          <Text fill="gray" fontSize={labelFontSize}>
+          <Text fill="silver" fontSize={labelFontSize}>
             {watermark}
           </Text>
         </svg>

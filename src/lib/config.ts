@@ -1,6 +1,7 @@
 export const padding = 30;
+export const nutHeight = 4;
 export const fretWidth = 48;
-export const noteRadius = 18;
+export const noteRadius = 19;
 export const fretHeight = 78;
 export const baseFontSize = 18;
 export const muteNoteSize = 30;
@@ -13,4 +14,4 @@ export const maxNumberOfStrings = 7;
 export const defaultNumberOfFrets = 5;
 export const defaultNumberOfStrings = 6;
 export const openNoteRadius = noteRadius * 0.7;
-export const fontFamily = "Arial, Helvetica, sans-serif";
+export const fontFamily = `Arial, "Helvetica Neue", Helvetica, sans-serif`;

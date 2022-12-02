@@ -12,11 +12,13 @@ import {
   noteRadius,
   openNoteRadius,
   padding,
-  titleFontSize,
+  startAtFretFontSize,
+  titleHeight,
 } from "./config";
 import Fretboard from "./Fretboard";
 import NoteFactory from "./NoteFactory";
 import Text from "./Text";
+import Title from "./Title";
 import { Label, Note } from "./types";
 import { clamp } from "./utils";
 
@@ -43,12 +45,11 @@ const ChordSVG: FC<ChordProps> = ({
   const nf = clamp(nfProp, minNumberOfFrets, maxNumberOfFrets);
   const ns = clamp(nsProp, minNumberOfStrings, maxNumberOfStrings);
   const hasOpenNotes = notes.find((n) => !n.fret);
-  const titleH = title ? titleFontSize + padding / 2 : 0;
-  const openNotesH = hasOpenNotes ? openNoteRadius + padding / 2 : 0;
-  const top = openNotesH + titleH + padding;
+  const openNotesH = hasOpenNotes ? openNoteRadius + padding : 0;
+  const top = openNotesH + titleHeight + padding * 2;
   const watermarkH = watermark ? labelFontSize : 0;
   const labelsH = labels.length ? labelFontSize : 0;
-  const bottom = watermarkH + labelsH + padding;
+  const bottom = watermarkH + labelsH + padding * 2;
   const fretboardH = fretHeight * nf;
   const fretboardW = fretWidth * (ns - 1);
   const viewBoxH = top + fretboardH + bottom;
@@ -62,9 +63,9 @@ const ChordSVG: FC<ChordProps> = ({
       {...props}
     >
       {title && (
-        <Text x="50%" y={padding} fontSize={titleFontSize}>
+        <Title x="50%" y={padding} width={fretboardW}>
           {title}
-        </Text>
+        </Title>
       )}
       <Fretboard
         y={top}
@@ -76,7 +77,11 @@ const ChordSVG: FC<ChordProps> = ({
         startAtFret={startAtFret}
       >
         {startAtFret && (
-          <Text x={-noteRadius * 3} y={fretHeight / 2} fontSize={titleFontSize}>
+          <Text
+            y={fretHeight / 2}
+            x={-noteRadius * 3}
+            fontSize={startAtFretFontSize}
+          >
             {startAtFret + "fr"}
           </Text>
         )}

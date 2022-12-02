@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof ChordSVG> = (args) => (
 
 export const C = Template.bind({});
 C.args = {
-  title: "C Major",
+  title: "C",
   numberOfFrets: 4,
   watermark: "www.chord.love",
   labels: [
@@ -70,7 +70,7 @@ C.args = {
 
 export const A = Template.bind({});
 A.args = {
-  title: "C Major",
+  title: "C",
   numberOfFrets: 4,
   startAtFret: 3,
   watermark: "www.chord.love",
@@ -99,7 +99,7 @@ A.args = {
 
 export const G = Template.bind({});
 G.args = {
-  title: "C Major",
+  title: "C",
   numberOfFrets: 5,
   startAtFret: 5,
   watermark: "www.chord.love",
@@ -146,7 +146,7 @@ G.args = {
 
 export const E = Template.bind({});
 E.args = {
-  title: "C Major",
+  title: "C",
   numberOfFrets: 4,
   startAtFret: 8,
   watermark: "www.chord.love",
@@ -196,7 +196,7 @@ E.args = {
 
 export const D = Template.bind({});
 D.args = {
-  title: "C Major",
+  title: "C",
   numberOfFrets: 5,
   startAtFret: 10,
   watermark: "www.chord.love",

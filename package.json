@@ -1,6 +1,6 @@
 {
   "name": "react-chord-svg",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "private": false,
   "files": [
     "lib/**/*"
@@ -24,24 +24,25 @@
     "start": "start-storybook -p 6006",
     "dev": "start-storybook -p 6006",
     "build:storybook": "build-storybook",
-    "test:ci": "start-server-and-test 'http-server storybook-static -c-1 --silent -p 6006' 6006 test"
+    "test:ci": "start-server-and-test 'http-server storybook-static -c-1 --silent -p 6006' 6006 test",
+    "ncu": "ncu -x puppeteer -u"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.2",
+    "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@storybook/addon-actions": "^6.5.13",
-    "@storybook/addon-essentials": "^6.5.13",
-    "@storybook/addon-interactions": "^6.5.13",
-    "@storybook/addon-links": "^6.5.13",
-    "@storybook/addon-storyshots": "^6.5.13",
-    "@storybook/addon-storyshots-puppeteer": "^6.5.13",
-    "@storybook/builder-webpack4": "^6.5.13",
-    "@storybook/manager-webpack4": "^6.5.13",
-    "@storybook/react": "^6.5.13",
+    "@storybook/addon-actions": "^6.5.14",
+    "@storybook/addon-essentials": "^6.5.14",
+    "@storybook/addon-interactions": "^6.5.14",
+    "@storybook/addon-links": "^6.5.14",
+    "@storybook/addon-storyshots": "^6.5.14",
+    "@storybook/addon-storyshots-puppeteer": "^6.5.14",
+    "@storybook/builder-webpack4": "^6.5.14",
+    "@storybook/manager-webpack4": "^6.5.14",
+    "@storybook/react": "^6.5.14",
     "@storybook/testing-library": "^0.0.13",
-    "@types/react": "^18.0.25",
+    "@types/react": "^18.0.26",
     "babel-jest": "^29.3.1",
     "babel-loader": "^9.1.0",
     "http-server": "^14.1.1",
@@ -52,7 +53,7 @@
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
     "start-server-and-test": "^1.14.0",
-    "typescript": "^4.8.4"
+    "typescript": "^4.9.3"
   },
   "peerDependencies": {
     "react": ">= 16.8.0",

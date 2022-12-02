@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof ChordSVG> = (args) => (
 
 export const C4String = Template.bind({});
 C4String.args = {
-  title: "C Major",
+  title: "C",
   numberOfFrets: 4,
   numberOfStrings: 4,
   watermark: "www.chord.love",
@@ -40,7 +40,7 @@ C4String.args = {
 
 export const C5String = Template.bind({});
 C5String.args = {
-  title: "C Major",
+  title: "C",
   numberOfFrets: 4,
   numberOfStrings: 5,
   watermark: "www.chord.love",

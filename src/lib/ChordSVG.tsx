@@ -46,7 +46,8 @@ const ChordSVG: FC<ChordProps> = ({
   const ns = clamp(nsProp, minNumberOfStrings, maxNumberOfStrings);
   const hasOpenNotes = notes.find((n) => !n.fret);
   const openNotesH = hasOpenNotes ? openNoteRadius + padding : 0;
-  const top = openNotesH + titleHeight + padding * 2;
+  const titleH = title ? titleHeight : 0;
+  const top = openNotesH + titleH + padding * 2;
   const watermarkH = watermark ? labelFontSize : 0;
   const labelsH = labels.length ? labelFontSize : 0;
   const bottom = watermarkH + labelsH + padding * 2;

@@ -4,7 +4,7 @@ React component to generate chord diagram SVGs
 
 ![Minified Size](https://img.shields.io/bundlephobia/min/react-chord-svg)
 
-![Chord](https://raw.githubusercontent.com/stuart-williams/react-chord-svg/main/assets/chord.webp)
+![Chord](https://raw.githubusercontent.com/stuart-williams/react-chord-svg/main/assets/chord.png)
 
 ## Install
 
